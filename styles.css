@@ -4,190 +4,227 @@
   box-sizing: border-box;
 }
 
-html {
-  font-size: 62.5%;
+/* Kevin Style */
+body {
+  height: 100%;
+  /* width: 100%; */
+}
+:root {
+  --background: rgba(0, 214, 170, 0.5);
 }
 
-/* Navbar */
-nav {
-  min-height: 10vh;
+header {
+  background: white;
+  text-align: center;
+  position: fixed;
   width: 100%;
+  z-index: 999;
+  height: 10vh;
+}
+
+.logo {
   display: flex;
-  align-items: center;
-  /* flex-wrap: wrap; */
-  padding: 1rem 7rem;
-  margin: auto;
-}
-
-.nav-left {
-  flex-grow: 1;
-}
-
-.nav-left img {
-  height: calc(1rem + 1vw);
-}
-
-.nav-right ul {
-  text-decoration: none;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.nav-right ul li {
-  list-style: none;
-  padding: 1rem 2rem;
-  font-family: karla;
-  font-size: calc(1rem + 1vw);
-  text-transform: uppercase;
-}
-
-.nav-right ul li button {
-  padding: 1rem 1.5rem;
-  background: none;
-  border: 0.4rem solid hsl(256, 39%, 17%);
-  font-size: calc(0.5rem + 1vw);
-  cursor: pointer;
-}
-
-/* Hero Section */
-.hero {
-  height: 90vh;
-}
-.hero-background {
-  /* position: fixed; */
-  height: 70vh;
   width: 100%;
-  background-color: hsl(256, 39%, 17%);
-  /* z-index: 0; */
-}
-
-.hero-elements {
+  height: 100%;
   position: absolute;
-  /* height: 100vh; */
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.logo a {
+  padding-left: 1em;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 1em;
+  height: 100%;
   display: flex;
-  /* align-items: center; */
-  /* flex-wrap: wrap; */
+  align-items: center;
 }
 
-.hero-left {
-  padding: 5rem 7rem;
-  /* flex-basis: 100rem; */
-  flex: 1 1 100%;
-  flex: 50%;
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: hsl(256, 39%, 17%);
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
 }
 
-.hero-elements h2 {
-  color: white;
-  font-family: DM Serif Display;
-  font-size: calc(5rem + 1vw);
-  line-height: 1em;
-  margin-top: 1em;
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: "";
+  position: absolute;
 }
 
-.hero-elements p {
-  color: white;
-  font-family: karla;
-  font-size: calc(1.2rem + 0.5vw);
-  margin-top: 1em;
+.nav-toggle-label span::before {
+  bottom: 7px;
 }
 
-.hero-elements button {
-  color: white;
-  padding: 1rem 1.5rem;
-  background: none;
-  border: 2px solid white;
-  font-size: calc(0.5rem + 1vw);
-  cursor: pointer;
-  margin-top: 1em;
+.nav-toggle-label span::after {
+  top: 7px;
 }
 
-.hero-right {
-  /* padding: 6rem; */
-  /* flex-shrink: 1; */
+.nav-toggle-label span {
 }
-
-/* .hero-right img {
-  flex: 1 1 30rem;
-
-  margin-top: 7rem;
-  margin-right: 20rem;
-  height: 70vh;
-  width: 30vw;
-} */
-
-.hero-elements img {
-  /* flex: 1 1 30rem; */
-  margin-top: 7rem;
-  margin-right: 20rem;
-  height: 70vh;
-  width: 30vw;
-}
-
-/* Mid Section Flex */
-
-.mid-section {
-  padding: 1rem 7rem;
+nav {
+  position: absolute;
+  text-align: center;
+  top: 100%;
+  left: 0;
+  background: hsl(256, 39%, 17%);
+  width: 100%;
+  transform: scale(1, 0);
+  transition: transform 400ms ease-in-out;
+  transform-origin: top;
   height: 100vh;
 }
 
-.mid-section-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 4em;
-  margin-top: 5em;
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.mid-section h2 {
-  color: hsl(256, 39%, 17%);
-  font-family: DM Serif Display;
-  font-size: calc(5rem + 1vw);
+nav li {
   margin-top: 1em;
-  font-weight: 700;
+  margin-bottom: 1em;
+  margin-left: 1em;
 }
 
-.mid-section h3 {
-  margin-top: 1em;
-  color: hsl(256, 39%, 17%);
-  font-family: DM Serif Display;
-  font-size: calc(2rem + 1vw);
-  font-weight: 700;
-}
-
-.mid-section p {
-  margin-top: 1em;
+nav li button {
+  padding: 0.5em 1em;
+  font-size: 1em;
   font-family: karla;
-  font-size: calc(1.2rem + 0.5vw);
+  background: transparent;
+  color: hsl(0, 0%, 98%);
+  border: 2px solid hsl(0, 0%, 98%);
 }
 
-.section3 {
-  padding: 1rem 7rem;
-  /* height: 100vh; */
-}
-
-.sec3-elements {
-  /* height: 10em; */
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  border: 2px solid black;
-  padding: 6em;
-}
-
-.sec3-elements h2 {
-  color: black;
-  font-family: DM Serif Display;
-  font-size: calc(4rem + 1vw);
-  line-height: 1em;
-  /* margin-top: 1em; */
-}
-
-/* .sec3-elements button {
-  color: hsl(256, 39%, 17%);
-  padding: 1rem 1.5rem;
-  background: none;
-  border: 2px solid hsl(256, 39%, 17%);
-  font-size: calc(0.5rem + 1vw);
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
   cursor: pointer;
+  opacity: 0;
+  -webkit-transition: opacity 1ms ease-in-out;
+  font-family: karla;
+}
+
+nav a:hover {
+  background: black;
+}
+
+.nav-toggle:checked ~ nav {
+  transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  -webkit-transition: opacity 250ms ease-in-out 250ms;
+}
+
+/* Section How we work */
+
+.how-we-work {
+  background: hsl(256, 39%, 17%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: hsl(0, 0%, 98%);
+}
+
+.how-we-work img {
+  width: 100%;
+}
+
+.how-we-work h2 {
+  margin-top: 3rem;
+  font-size: 3.5rem;
+  text-align: center;
+  font-family: DM Serif Display;
+}
+
+.how-we-work p {
+  display: block;
+  margin: 1em;
+  height: auto;
+  width: 80%;
+  font-family: karla;
+  font-size: x-large;
+  text-align: center;
+  font-weight: lighter;
+  color: hsl(273, 4%, 51%);
+}
+
+.how-we-work a {
   margin-top: 1em;
-} */
+  text-decoration: none;
+  margin-bottom: 3rem;
+}
+
+.how-we-work a button {
+  padding: 0.5em 1em;
+  font-size: 1.5em;
+  font-family: karla;
+  background: transparent;
+  color: hsl(0, 0%, 98%);
+  border: 2px solid hsl(0, 0%, 98%);
+}
+
+@media screen and (min-width: 800px) {
+  .nav-toggle-label {
+    display: none;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+  }
+
+  .logo {
+    grid-column: 2 / 3;
+    display: flex;
+    align-items: center;
+  }
+
+  nav {
+    all: unset;
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  nav ul {
+    display: flex;
+    align-items: center;
+  }
+
+  nav li {
+    margin-left: 3em;
+    margin-bottom: 0;
+  }
+
+  nav a {
+    opacity: 1;
+    color: hsl(256, 39%, 17%);
+  }
+
+  nav li button {
+    color: hsl(256, 39%, 17%);
+    border: 2px solid hsl(256, 39%, 17%);
+  }
+
+  /* Section How-we-work */
+}
