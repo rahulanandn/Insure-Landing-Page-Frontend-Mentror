@@ -4,10 +4,11 @@
   box-sizing: border-box;
 }
 
-/* Kevin Style */
 body {
   height: 100%;
   /* width: 100%; */
+  display: grid;
+  grid-template-rows: auto auto;
 }
 :root {
   --darkViolet: hsl(270, 9%, 17%);
@@ -21,7 +22,9 @@ header {
   position: fixed;
   width: 100%;
   z-index: 999;
-  height: 10vh;
+  min-height: 10% !important;
+  /* height: 10vh; */
+  grid-row: 1;
 }
 
 .logo {
@@ -123,9 +126,7 @@ nav a {
   font-family: karla;
 }
 
-nav a:hover {
-  background: black;
-}
+
 
 .nav-toggle:checked ~ nav {
   transform: scale(1, 1);
@@ -152,6 +153,7 @@ nav a:hover {
 }
 
 .how-we-work {
+  grid-row: 2;
   background: hsl(256, 39%, 17%);
   display: flex;
   flex-direction: column;
@@ -203,7 +205,23 @@ nav a:hover {
   border: 2px solid hsl(0, 0%, 98%);
 }
 
-@media screen and (min-width: 800px) {
+/* section 2 */
+.mid-section {
+  grid-row: 3;
+  text-align: center;
+  padding-top: 3rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+.mid-section-grid {
+  display: grid;
+}
+.mid-section-grid  div {
+  margin-top: 2rem;
+}
+
+/* @media screen and (min-width: 800px) { */
+  @media (min-width: 800px) {
   .small-image {
     display: none;
   }
@@ -213,10 +231,15 @@ nav a:hover {
   .nav-toggle-label {
     display: none;
   }
-
+  body {
+    display: grid;
+    grid-template-rows: auto;
+  }
   header {
     display: grid;
     grid-template-columns: 1fr 1fr minmax(600px, 3fr) 1fr;
+    min-height: 10% !important;
+    grid-row: 1;
   }
 
   .logo {
@@ -246,14 +269,51 @@ nav a:hover {
 
   nav a {
     opacity: 1;
-    color: hsl(256, 39%, 17%);
+    color: hsl(273, 4%, 51%);
     font-size: 1.1rem;
+    font-weight: 900;
   }
 
   nav li button {
     color: hsl(256, 39%, 17%);
     border: 2px solid hsl(256, 39%, 17%);
   }
+  nav a:hover {
+    color: hsl(270, 9%, 17%);
+    font-weight: bold;
+  }
+  
+  .how-we-work img {
+    /* padding: 1rem !important; */
+    /* width: auto;
+    height: auto; */
+    /* margin-top: auto; */
+    /* padding: 1rem; */
+  }
+  /*
+  .how-we-work {
+    flex-direction: column;
+    grid-row: 1;
+  }
+  .sec1-how-we-work {
+    align-items: center;
+    padding-left: 1em;
+    left: 0;
+  }
+  .how-we-work h2 {
+    text-align: left;
+    font-size: calc(2rem + 0.5vw);
+  }
+  .how-we-work p {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    font-size: calc(1rem + 0.5vw); 
+  }
+  .transp {
+    display: none;
+  }
+*/
 }
 
 
@@ -300,7 +360,7 @@ nav a:hover {
 
   nav a {
     opacity: 1;
-    color: hsl(256, 39%, 17%);
+    /* color: hsl(256, 39%, 17%); */
     font-size: 1.1rem;
   }
 
@@ -321,10 +381,11 @@ nav a:hover {
   }
   .how-we-work img {
     /* width: 100%; */
-    width: 440px;
+    max-height: 70% !important;
+    width: auto;
     height: auto;
     position: relative;
-    /* margin: 3rem; */
+    margin: 3rem;
     right: 0;
     grid-column: 3/4;
     grid-row: 1 / 3;
