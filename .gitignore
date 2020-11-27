@@ -18,10 +18,6 @@
 .env.development.local
 .env.test.local
 .env.production.local
-.extra.css
-.index2.html
-.index3.html
-.index6.html
 
 npm-debug.log*
 yarn-debug.log*
